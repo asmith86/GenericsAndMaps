@@ -1,5 +1,6 @@
 package common;
 
+import java.util.Comparator;
 import java.util.Objects;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 
@@ -11,7 +12,7 @@ import org.apache.commons.lang3.builder.CompareToBuilder;
  * 
  */
 
-public class Movie implements Comparable  {
+public class Movie implements Comparable<Movie>  {
     private String title;
     private String director;
     private String movieId;
@@ -77,12 +78,12 @@ public class Movie implements Comparable  {
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Movie m) {
         
 	final int EQUAL = 0;
 	
         
-        Movie m = (Movie)o;
+        
 
         if(this.equals(m)) return EQUAL;
         
@@ -91,6 +92,10 @@ public class Movie implements Comparable  {
 
         return EQUAL;
     }
+
+    
+
+    
     
     
 
